@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style type="text/css">
+      body {
+        background: rgb(204, 204, 204);
+      }
+      page {
+        background: white;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 0.5cm;
+        box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+      }
+      page[size="A4"] {
+        width: 21cm;
+        height: 29.7cm;
+      }
+
+      hr[is-divide="true"] {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: none !important;
+      }
+      [is-divide="true"] {
+        page-break-after: always;
+      }
+
+      @media print {
+        body,
+        page {
+          margin: 0;
+          box-shadow: 0;
+        }
+      }
+    </style>
+    <title>Page Print Example</title>
+  </head>
+  <!--주형-->
+  <style>
+    .table > table {
+      border-spacing: 0px;
+      border-style: none;
+      padding: 0px;
+      width: 100%;
+    }
+    .table > table > tbody > tr:first-child td {
+      text-align: center;
+      padding: 30px 0px 30px 0px;
+      font-size: 40px;
+    }
+
+    .table > table > tbody > tr > th {
+      padding: 10px;
+      background-color: cornflowerblue;
+      color: #fff;
+      border: 1px solid #eee;
+    }
+    .table > table > tbody > tr > td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #eee;
+    }
+    .table > table > tbody > tr > td > textarea {
+      height: 300px !important;
+      width: 100%;
+    }
+    .form-control {
+      width: 100%;
+      height: 34px;
+      border-width: 0;
+      padding: 0px 12px;
+      line-height: 1.42857143;
+      color: #555555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+      outline: none;
+      padding: 0;
+    }
+    .form-control:focus {
+      border-color: #66afe9;
+      outline: 0;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+        0 0 8px rgba(102, 175, 233, 0.6);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+        0 0 8px rgba(102, 175, 233, 0.6);
+    }
+
+    .table:nth-child(2) > table > tbody > tr > th,
+    .table:nth-child(2) > table > tbody > tr > td {
+      padding: 0px;
+      font-size: 10px;
+    }
+  </style>
+  <body>
+    <!--
+    <table>
+      <tr>
+        <td>제목</td>
+        <td>제목1</td>
+        <td>제목2</td>
+        <td>제목3</td>
+      </tr>
+      <tr>
+        <td>데이타</td>
+        <td>데이타1</td>
+        <td>데이타2</td>
+        <td>데이타3</td>
+      </tr>
+    </table>
+	-->
+
+    <div class="table">
+      <table>
+        <colgroup>
+          <col width="7%" />
+          <col width="10%" />
+          <col width="7%" />
+          <col width="10%" />
+          <col width="7%" />
+          <col width="10%" />
+          <col width="7%" />
+          <col width="10%" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <td colspan="8">출하송장</td>
+          </tr>
+          <tr>
+            <th>송장번호</th>
+            <td>
+              354991715621
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <th>총수량</th>
+            <td>
+              30
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <th>출고일시</th>
+            <td>
+              2023-11-15
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <th>출고자</th>
+            <td>
+              출고자
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+          </tr>
+          <tr>
+            <th>품명</th>
+            <td>
+              종강하고싶다.
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <th>중량(N)</th>
+            <td>
+              9.80665 N
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <th>발행일시</th>
+            <td>
+              2023-11-15
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <th>검수자</th>
+            <td>
+              검수자
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+          </tr>
+          <tr>
+            <th>인도조건</th>
+            <td>
+              F 안받기
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <th>중량(G)</th>
+            <td>
+              161G/M2
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <th>인수일자</th>
+            <td>
+              2023-11-15
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <th>인수자</th>
+            <td>
+              인수자
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+          </tr>
+          <tr>
+            <th>선명</th>
+            <td>
+              선명
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <th>유통기지</th>
+            <td>
+              종암동
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <th>운송차량</th>
+            <td>
+              스타렉스
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <th>기사성명</th>
+            <td>
+              기사성명
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+          </tr>
+          <tr>
+            <th>목적지</th>
+            <td>
+              종암동
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <th>판매계약자</th>
+            <td>
+              판매계약자
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <th>고객사</th>
+            <td>
+              SK
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <th>최종고객사</th>
+            <td>
+              SK
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col width="30px" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <th rowspan="2">순번</th>
+            <th>제품번호</th>
+            <th>등급</th>
+            <th>규격</th>
+            <th>두께</th>
+            <th>폭</th>
+            <th>길이</th>
+            <th rowspan="2">중량결정</th>
+            <th rowspan="2">중량결정 net</th>
+            <th rowspan="2">중량결정 Gross</th>
+            <th>단증</th>
+            <th>Charge No</th>
+            <th>YP</th>
+            <th>TS</th>
+            <th>EL</th>
+            <th>경도</th>
+            <th>용도</th>
+            <th>도유</th>
+            <th>내경</th>
+            <th>희망납기</th>
+          </tr>
+          <tr>
+            <th>OrderLine</th>
+            <th>목전</th>
+            <th colspan="4">Po 번호</th>
+            <th>실폭</th>
+            <th>도금량</th>
+            <th>C</th>
+            <th>Si</th>
+            <th>Mn</th>
+            <th>P</th>
+            <th>S</th>
+            <th>후처리</th>
+            <th>외경</th>
+            <th>저장위치</th>
+          </tr>
+
+          <tr>
+            <td rowspan="2">1</td>
+            <td>
+              CV1166
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              목전
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              DT2CA-BT
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              0.40
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              978
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              5940
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              NA
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              18250
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              중량
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              실폭
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              도금량
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              1
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              12
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              123
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              xxx1
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              xxx1
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              xxx1
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              외경
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              저장위치
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+          </tr>
+          <tr>
+            <td>
+              CV1166
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              목전
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              DT2CA-BT
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              0.40
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              978
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              5940
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              NA
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              18250
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              중량
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              실폭
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              도금량
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              1
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              12
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              123
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              xxx1
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              xxx1
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              xxx1
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              외경
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              저장위치
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+          </tr>
+
+          <tr>
+            <td rowspan="2">2</td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td colspan="4">
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+          </tr>
+
+          <tr>
+            <td rowspan="2">3</td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td colspan="4">
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+          </tr>
+
+          <tr>
+            <td rowspan="2">4</td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td colspan="4">
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+            <td>
+              <!--
+              <input type="text" name="" id="" class="form-control" />
+			  -->
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="20">
+              <textarea
+                class="form-control"
+                id=""
+                cols="30"
+                rows="10"
+              ></textarea>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table" style="margin-top: 100px">
+      <table>
+        <colgroup>
+          <col width="5%" />
+          <col width="5%" />
+          <col width="5%" />
+          <col width="5%" />
+          <col width="5%" />
+          <col width="5%" />
+          <col width="10%" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <td style="border: none"></td>
+            <td style="border: none"></td>
+            <th>운전원확인</th>
+            <th>도착일시</th>
+            <td></td>
+            <th>확인</th>
+            <td></td>
+          </tr>
+          <tr>
+            <th>상세착지</th>
+            <td></td>
+            <th rowspan="2">고객사확인</th>
+            <td colspan="4"></td>
+          </tr>
+          <tr>
+            <th>문의처</th>
+            <td></td>
+            <th>도착일시</th>
+            <td></td>
+            <th>인수자</th>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script type="text/javascript">
+      window.onload = function () {
+        window.print();
+      };
+    </script>
+  </body>
+</html>
