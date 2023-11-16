@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <style type="text/css">
+    body {
+
+      /** background: rgb(204, 204, 204); **/
+      /** 박주형 변경 **/
+      background-color: #fff;
+      /** 박주형 추가**/
+      margin: 0px;
+      /** 박주형 추가 **/
+      padding: 0px;
+      /** 박주형 추가 **/
+    }
+
+    page {
+      background: white;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 0.5cm;
+      box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+    }
+
+    page[size="A4"] {
+      width: 21cm;
+      height: 29.7cm;
+    }
+
+    hr[is-divide="true"] {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: none !important;
+    }
+
+    [is-divide="true"] {
+      page-break-after: always;
+    }
+
+    @media print {
+
+      body,
+      page {
+        margin: 0;
+        box-shadow: 0;
+      }
+
+    }
+  </style>
+  <title>Page Print Example</title>
+</head>
+<!--주형-->
+<style>
+  ul li {
+    list-style: none;
+  }
+
+  .header ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .table>table {
+    border-spacing: 0px;
+    border-style: none;
+    padding: 0px;
+    width: 100%;
+  }
+
+  .table:first-child>table>tbody>tr:first-child td {
+    text-align: right;
+    padding: 30px 0px 30px 0px;
+    font-size: 40px;
+  }
+
+  .table>table>tbody>tr>th {
+    padding: 5px 10px;
+    background-color: cornflowerblue;
+    color: #fff;
+    border: 1px solid #eee;
+    font-size: 14px;
+  }
+
+  .table>table>tbody>tr>td {
+    padding: 5px 10px;
+    text-align: center;
+    border: 1px solid #eee;
+    font-size: 14px;
+  }
+
+
+  .table:nth-child(2)>table>tbody>tr>th,
+  .table:nth-child(2)>table>tbody>tr>td {
+    padding: 10px 0px;
+    font-size: 10px;
+  }
+
+  .table:nth-child(3)>table>tbody>tr>th,
+  .table:nth-child(3)>table>tbody>tr>td {
+    padding: 7px 0px;
+    font-size: 13px;
+  }
+
+  p {
+    margin: 0px;
+  }
+
+  .company {
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .tel {
+    font-size: 12px;
+    text-align: right;
+  }
+
+  .bnone {
+    border: none !important;
+  }
+
+  .table:nth-child(3) {
+    margin-top: 120px;
+  }
+
+  .posco {
+    font-size: 45px !important;
+  }
+</style>
+
+<body>
+  <!-- 박주형 막음
+    <table>
+      <tr>
+        <td>제목</td>
+        <td>제목1</td>
+        <td>제목2</td>
+        <td>제목3</td>
+      </tr>
+      <tr>
+        <td>데이타</td>
+        <td>데이타1</td>
+        <td>데이타2</td>
+        <td>데이타3</td>
+      </tr>
+    </table>
+	-->
+  <!--
+  <div class="header">
+    <div>
+      <ul>
+        <li>
+          (육송) 출하송장
+        </li>
+        <li>
+          <p>
+            <span>해동기업(주)</span>
+            <span>T.054-285-8538 F.054-292-7556</span>
+          </p>
+        </li>
+        <li>
+          POSCO
+        </li>
+      </ul>
+    </div>
+  </div>
+  -->
+
+
+
+  <div class="table">
+    <table>
+      <colgroup>
+        <col width="7%" />
+        <col width="10%" />
+        <col width="7%" />
+        <col width="10%" />
+        <col width="7%" />
+        <col width="10%" />
+        <col width="7%" />
+        <col width="10%" />
+      </colgroup>
+      <tbody>
+        <tr>
+          <td colspan="5" class="bnone">출하송장</td>
+          <td colspan="2" class="bnone">
+            <p class="company">해동기업 (주)</p>
+            <p class="tel">T.054-285-8538 F.054-292-7556</p>
+          </td>
+          <td class="bnone posco" style="font-weight: bold;">
+            POSCO
+          </td>
+        </tr>
+        <tr>
+          <th>송장번호</th>
+          <td>
+            354991715621
+
+          </td>
+          <th>총수량</th>
+          <td>
+            30
+
+          </td>
+          <th>출고일시</th>
+          <td>
+            2023-11-15
+
+          </td>
+          <th>출고자</th>
+          <td>
+            출고자
+
+          </td>
+        </tr>
+        <tr>
+          <th>품명</th>
+          <td>
+            종강하고싶다.
+
+          </td>
+          <th>중량(N)</th>
+          <td>
+            9.80665 N
+
+          </td>
+          <th>발행일시</th>
+          <td>
+            2023-11-15
+
+          </td>
+          <th>검수자</th>
+          <td>
+            검수자
+
+          </td>
+        </tr>
+        <tr>
+          <th>인도조건</th>
+          <td>
+            F 안받기
+
+          </td>
+          <th>중량(G)</th>
+          <td>
+            161G/M2
+
+          </td>
+          <th>인수일자</th>
+          <td>
+            2023-11-15
+
+          </td>
+          <th>인수자</th>
+          <td>
+            인수자
+
+          </td>
+        </tr>
+        <tr>
+          <th>선명</th>
+          <td>
+            선명
+
+          </td>
+          <th>유통기지</th>
+          <td>
+            종암동
+
+          </td>
+          <th>운송차량</th>
+          <td>
+            스타렉스
+
+          </td>
+          <th>기사성명</th>
+          <td>
+            기사성명
+
+          </td>
+        </tr>
+        <tr>
+          <th>목적지</th>
+          <td>
+            종암동
+
+          </td>
+          <th>판매계약자</th>
+          <td>
+            판매계약자
+
+          </td>
+          <th>고객사</th>
+          <td>
+            SK
+
+          </td>
+          <th>최종고객사</th>
+          <td>
+            SK
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table">
+    <table>
+      <colgroup>
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col width="50px" />
+      </colgroup>
+      <tbody>
+        <tr>
+          <th rowspan="2">순번</th>
+          <th>제품번호</th>
+          <th>등급</th>
+          <th>규격</th>
+          <th>두께</th>
+          <th>폭</th>
+          <th>길이</th>
+          <th rowspan="2">중량결정</th>
+          <th rowspan="2">중량결정 net</th>
+          <th rowspan="2">중량결정 Gross</th>
+          <th>단증</th>
+          <th>Charge No</th>
+          <th>YP</th>
+          <th>TS</th>
+          <th>EL</th>
+          <th>경도</th>
+          <th>용도</th>
+          <th>도유</th>
+          <th>내경</th>
+          <th>희망납기</th>
+        </tr>
+        <tr>
+          <th>OrderLine</th>
+          <th>목전</th>
+          <th colspan="4">Po 번호</th>
+          <th>실폭</th>
+          <th>도금량</th>
+          <th>C</th>
+          <th>Si</th>
+          <th>Mn</th>
+          <th>P</th>
+          <th>S</th>
+          <th>후처리</th>
+          <th>외경</th>
+          <th>저장위치</th>
+        </tr>
+
+        <tr>
+          <td rowspan="2">1</td>
+          <td>
+            CV1166
+
+          </td>
+          <td>
+            목전
+
+          </td>
+          <td>
+            DT2CA-BT
+
+          </td>
+          <td>
+            0.40
+
+          </td>
+          <td>
+            978
+
+          </td>
+          <td>
+            5940
+
+          </td>
+          <td>
+            NA
+
+          </td>
+          <td>
+            18250
+
+          </td>
+          <td>
+            중량
+
+          </td>
+          <td>
+            실폭
+
+          </td>
+          <td>
+            도금량
+
+          </td>
+          <td>
+            1
+
+          </td>
+          <td>
+            12
+
+          </td>
+          <td>
+            123
+
+          </td>
+          <td>
+            xxx1
+
+          </td>
+          <td>
+            xxx1
+
+          </td>
+          <td>
+            xxx1
+
+          </td>
+          <td>
+            외경
+
+          </td>
+          <td>
+            저장위치
+
+          </td>
+        </tr>
+        <tr>
+          <td>
+            CV1166
+          </td>
+          <td>
+            목전
+
+          </td>
+          <td colspan="4">
+            DT2CA-BT
+
+          </td>
+          <td>
+            NA
+
+          </td>
+          <td>
+            18250
+
+          </td>
+          <td>
+            중량
+
+          </td>
+          <td>
+            실폭
+
+          </td>
+          <td>
+            도금량
+
+          </td>
+          <td>
+            1
+
+          </td>
+          <td>
+            12
+
+          </td>
+          <td>
+            123
+
+          </td>
+          <td>
+            xxx1
+
+          </td>
+          <td>
+            xxx1
+
+          </td>
+          <td>
+            xxx1
+
+          </td>
+          <td>
+            외경
+
+          </td>
+          <td>
+            저장위치
+
+          </td>
+        </tr>
+
+        <tr>
+          <td rowspan="2">2</td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+        </tr>
+        <tr>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td colspan="4">
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+        </tr>
+
+        <tr>
+          <td rowspan="2">3</td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+        </tr>
+        <tr>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td colspan="4">
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+        </tr>
+
+        <tr>
+          <td rowspan="2">4</td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+        </tr>
+        <tr>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td colspan="4">
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table">
+    <table>
+      <colgroup>
+        <col>
+        <col width="50%"> <!--50%-->
+        <col>
+        <col>
+        <col>
+        <col>
+        <col width="14%"> <!--width="14%"-->
+      </colgroup>
+      <tbody>
+        <tr>
+          <td style="border: none"></td>
+          <td style="border: none"></td>
+          <th>운전원확인</th>
+          <th>도착일시</th>
+          <td>2023-11-5</td>
+          <th>확인</th>
+          <td>확인</td>
+        </tr>
+        <tr>
+          <th>상세착지</th>
+          <td>경상북도 포항시 남구 괴동로 100 (장흥동, 동양석판) (주)티씨씨스틸</td>
+          <th rowspan="2">고객사확인</th>
+          <td colspan="4"></td>
+        </tr>
+        <tr>
+          <th>문의처</th>
+          <td>문의처</td>
+          <th>도착일시</th>
+          <td>2023-11-15</td>
+          <th>인수자</th>
+          <td>인수자</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script type="text/javascript">
+    window.onload = function () {
+      window.print();
+    };
+  </script>
+</body>
+
+</html>
